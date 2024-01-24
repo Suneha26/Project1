@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Content in feature/new
-=======
-Content in feature/123
->>>>>>> feature/123
+Combined content from both branches
