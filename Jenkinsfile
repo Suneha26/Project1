@@ -19,7 +19,7 @@ pipeline {
                     sh 'dotnet build'
 
                     // NPM build
-                    sh 'npm build'
+                    sh 'npm run build'
                 }
             }
         }
@@ -47,32 +47,40 @@ pipeline {
         }
         stage('Dev') {
             steps {
-                script {it ->
+                script { devDeployment ->
                     // Connection to development server and publish
                     // Use appropriate CLI commands or plugins for deployment
+                    echo 'Deployment to Dev server'
+                    // Example: sshDeploy or other deployment commands
                 }
             }
         }
         stage('Stage') {
             steps {
-                script {it ->
+                script { stageDeployment ->
                     // Connection to staging server and publish
                     // Use appropriate CLI commands or plugins for deployment
+                    echo 'Deployment to Stage server'
+                    // Example: sshDeploy or other deployment commands
                 }
             }
         }
         stage('Prod') {
             steps {
-                script {it ->
+                script { prodDeployment ->
                     // Connection to production server and publish
                     // Use appropriate CLI commands or plugins for deployment
+                    echo 'Deployment to Production server'
+                    // Example: sshDeploy or other deployment commands
                 }
             }
         }
         stage('Artifactory') {
             steps {
-                script {it ->
+                script { artifactoryPublish ->
                     // Add steps for Artifactory publishing if needed
+                    echo 'Artifactory publishing steps'
+                    // Example: Publish to Artifactory
                 }
             }
         }
