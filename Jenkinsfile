@@ -47,7 +47,7 @@ pipeline {
         }
         stage('Dev') {
             steps {
-                script {
+                script {it ->
                     // Connection to development server and publish
                     // Use appropriate CLI commands or plugins for deployment
                 }
@@ -55,7 +55,7 @@ pipeline {
         }
         stage('Stage') {
             steps {
-                script {
+                script {it ->
                     // Connection to staging server and publish
                     // Use appropriate CLI commands or plugins for deployment
                 }
@@ -63,7 +63,7 @@ pipeline {
         }
         stage('Prod') {
             steps {
-                script {
+                script {it ->
                     // Connection to production server and publish
                     // Use appropriate CLI commands or plugins for deployment
                 }
@@ -71,7 +71,7 @@ pipeline {
         }
         stage('Artifactory') {
             steps {
-                script {
+                script {it ->
                     // Add steps for Artifactory publishing if needed
                 }
             }
